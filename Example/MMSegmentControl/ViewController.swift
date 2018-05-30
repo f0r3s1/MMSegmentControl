@@ -28,19 +28,19 @@ class ViewController: UIViewController {
     func configureSegmentedControl() {
         let titleStrings = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"]
         let titles: [NSAttributedString] = {
-            let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.white]
+            let attributes = [kCTFontAttributeName: UIFont.systemFont(ofSize: 16), kCTForegroundColorAttributeName: UIColor.white]
             var titles = [NSAttributedString]()
             for titleString in titleStrings {
-                let title = NSAttributedString(string: titleString, attributes: attributes)
+                let title = NSAttributedString(string: titleString, attributes: attributes as [NSAttributedStringKey : Any])
                 titles.append(title)
             }
             return titles
         }()
         let selectedTitles: [NSAttributedString] = {
-            let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.white]
+            let attributes = [kCTFontAttributeName: UIFont.systemFont(ofSize: 16), kCTForegroundColorAttributeName: UIColor.white]
             var selectedTitles = [NSAttributedString]()
             for titleString in titleStrings {
-                let selectedTitle = NSAttributedString(string: titleString, attributes: attributes)
+                let selectedTitle = NSAttributedString(string: titleString, attributes: attributes as [NSAttributedStringKey : Any])
                 selectedTitles.append(selectedTitle)
             }
             return selectedTitles
